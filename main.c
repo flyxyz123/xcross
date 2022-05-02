@@ -1,7 +1,6 @@
 // edit source code from: https://github.com/gvalkov/xrectsel
 //#include <stdio.h>
 #include <X11/Xlib.h>
-#include <unistd.h>
 
 //int main (int argc, char *argv[])
 int main (void)
