@@ -1,10 +1,12 @@
 // edit source code from: https://github.com/gvalkov/xrectsel
+
 //#include <stdio.h>
 #include <X11/Xlib.h>
 
 //int main (int argc, char *argv[])
 int main (void)
 {
+	// useless trash vars
     int int_tmp;
     unsigned int uint_tmp;
 	Window window_tmp;
@@ -26,20 +28,17 @@ int main (void)
                       &gcval);
 
 	XQueryPointer(disp, root, &window_tmp, &window_tmp, &rootx, &rooty, &int_tmp, &int_tmp, &uint_tmp);
-	//printf("%d\n", scr->width);
-	//printf("%d\n\n", scr->height);
-	// XGetGeometry() maybe better, instead of DisplayHeight() and DisplayWidth()
+	//printf("pointer coordinates x: %d, y: %d\n", rootx, rooty);
+	//printf("screen width: %d, height: %d\n", scr->width, scr->height);
 	XDrawLine(disp, root, gc, rootx, 0, rootx, scr->height);
 	XDrawLine(disp, root, gc, 0, rooty, scr->width, rooty);
-	//XDrawRectangle(disp, root, gc, 1000, 1000, 1000, 1000);
-	XFlush(disp);
 
-    XUngrabPointer(disp, CurrentTime);
-    XUngrabKeyboard(disp, CurrentTime);
-	//XFreeCursor(disp, cursor);
-    XFreeGC(disp, gc);
-    XSync(disp, True);
+	// not sure if useful
+	//XFlush(disp);
+    //XFreeGC(disp, gc);
+    //XSync(disp, True);
 
+	// man XCloseDisplay says: "Before exiting, you should call XCloseDisplay explicitly so that any pending errors are reported as XCloseDisplay performs a final XSync operation."
     XCloseDisplay(disp);
 
 	return 0;
