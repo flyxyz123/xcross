@@ -1,3 +1,7 @@
+# edit source code from: 
+# https://github.com/BlueCannonBall/XAim
+# https://git.suckless.org/dwm
+
 CC = gcc
 CFLAGS = -g -Wall -lX11
 PREFIX = /usr/local

@@ -1,4 +1,5 @@
-// edit source code from: https://github.com/gvalkov/xrectsel
+// edit source code from:
+// https://github.com/gvalkov/xrectsel
 
 //#include <stdio.h>
 #include <X11/Xlib.h>
