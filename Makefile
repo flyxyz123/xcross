@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -g -Wall -lX11
 PREFIX = /usr/local
 
-xcross: main.c
+xcross: xcross.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
