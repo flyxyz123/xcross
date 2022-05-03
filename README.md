@@ -2,7 +2,7 @@
 
 # references
 
-## main.c
+## xcross.c
 
 <https://github.com/gvalkov/xrectsel>
 
