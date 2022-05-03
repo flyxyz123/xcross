@@ -26,11 +26,11 @@ int main (void)
                       &gcval);
 
 	XQueryPointer(disp, root, &window_tmp, &window_tmp, &rootx, &rooty, &int_tmp, &int_tmp, &uint_tmp);
-	//printf("%d\n", DisplayWidth(disp, DefaultScreen(disp)));
-	//printf("%d\n\n", DisplayHeight(disp, DefaultScreen(disp)));
+	//printf("%d\n", scr->width);
+	//printf("%d\n\n", scr->height);
 	// XGetGeometry() maybe better, instead of DisplayHeight() and DisplayWidth()
-	XDrawLine(disp, root, gc, rootx, 0, rootx, DisplayHeight(disp, DefaultScreen(disp)));
-	XDrawLine(disp, root, gc, 0, rooty, DisplayWidth(disp, DefaultScreen(disp)), rooty);
+	XDrawLine(disp, root, gc, rootx, 0, rootx, scr->height);
+	XDrawLine(disp, root, gc, 0, rooty, scr->width, rooty);
 	//XDrawRectangle(disp, root, gc, 1000, 1000, 1000, 1000);
 	XFlush(disp);
 
