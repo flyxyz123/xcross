@@ -13,6 +13,7 @@ clean:
 	rm -f xcross
 
 install:
+	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f xcross ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/xcross
 
